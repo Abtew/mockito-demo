@@ -71,6 +71,7 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 		</plugins>
+		<finalName>mockito-docekr-jenkin-integration</finalName>
 	</build>
 
 </project>
