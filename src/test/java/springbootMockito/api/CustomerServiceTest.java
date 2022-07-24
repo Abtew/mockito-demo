@@ -3,6 +3,9 @@ package springbootMockito.api;
 import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.when;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,6 +31,14 @@ public class CustomerServiceTest {
 		Customer cust = new Customer();
 		when(mockRepository.save(cust)).thenReturn(cust);
 		assertEquals(cust, service.addCustomer(cust));
+		
+	}
+	
+	@Test
+	public void testGetCustomer() {
+		List<Customer> custList = new ArrayList<>();
+		when(mockRepository.findAll()).thenReturn(custList);
+		assertEquals(custList, service.getCustomers());
 		
 	}
 	
